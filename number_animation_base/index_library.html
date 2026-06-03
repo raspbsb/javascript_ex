@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>number animation</title>
+  </head>
+  <body>
+    <h1>number animation</h1>
+    <div id="number" data-num="30">0</div>
+    <hr />
+    <div class="numbers">
+      <div data-num="10">0</div>
+      <div data-num="30">0</div>
+      <div data-num="20">0</div>
+    </div>
+    <script type="module">
+      import { CountUp } from "https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.9.0/countUp.min.js";
+
+      const targets = document.querySelectorAll(".numbers > div");
+
+      function startNumberAnimation(target) {
+        const targetNumber = target.dataset.num;
+
+        let countUp = new CountUp(target, targetNumber, { duration: 3, suffix: "%" });
+        countUp.start();
+      }
+
+      startNumberAnimation(document.querySelector("#number"));
+
+      targets.forEach(t => {
+        startNumberAnimation(t);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Object</title>
+  </head>
+
+  <body>
+    <h1>Object</h1>
+    <pre>
+      객체 = 변수 + 함수를 합쳐서 재활용할 코드를 만듦
+      object = property + method
+
+      새 객체 생성
+      1. 빈객체 + 값을 추가
+      var 객체명 = new object(); // 빈객체 생성
+      var 객체명 = {}; // 빈객체 생성
+
+        값 추가
+        객체명.property명 = 값;
+      2. 값을 추가 객체 생성
+      
+      2. 값을 추가 + 객체 생성
+      var 객체명 = {property명:value값, property명:value값, ...}
+    </pre>
+    <script>
+      var st1 = {};
+      st1.kor = 90;
+      st1.eng = 80;
+      st1.math = 100;
+      st1.total = function () {
+        return this.kor + this.eng + this.math;
+      };
+      st1.aver = function () {
+        return this.total() / 3;
+      };
+      console.log(st1, st1.kor, st1.total(), st1.aver());
+
+      let st2 = {
+        kor: 80,
+        eng: 100,
+        math: 90,
+        total: function () {
+          return this.kor + this.eng + this.math;
+        },
+        aver: function () {
+          return this.total() / 3;
+        }
+      };
+      console.log(st2, st2.eng, st2.total(), st2.aver());
+    </script>
+  </body>
+</html>

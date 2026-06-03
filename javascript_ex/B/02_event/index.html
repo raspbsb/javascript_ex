@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript Basic Event</title>
+    <script defer src="02_script.js"></script>
+  </head>
+
+  <body>
+    <h1>event</h1>
+    <div class="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tenetur sapiente commodi
+        aut a distinctio quaerat minima ducimus? Eaque ad ipsa dolorem saepe facilis in suscipit
+        commodi minima, odio omnis.
+      </p>
+      <button id="submit">Click me</button>
+    </div>
+    <hr />
+    <h2>select</h2>
+    <select name="" id="color">
+      <option value="">색상을 선택하세요.</option>
+      <option value="#ccc">silver</option>
+      <option value="#ebebeb">Light gray</option>
+      <option value="green">green</option>
+    </select>
+    <hr />
+    <input type="text" id="username" />
+
+    <script src="js/script.js"></script>
+
+    <hr />
+    <!-- target VS currentTarget 확인용 -->
+
+    <div id="parent" style="padding: 30px; background: lightblue">
+      부모 div
+      <button id="child">버튼</button>
+    </div>
+
+    <script>
+      const parent = document.querySelector("#parent");
+
+      parent.addEventListener("click", function (e) {
+        console.log("target :", e.target);
+        console.log("currentTarget :", e.currentTarget);
+
+        console.log("target id :", e.target.id);
+        console.log("currentTarget id :", e.currentTarget.id);
+      });
+    </script>
+
+    <!-- 실험 끝 -->
+  </body>
+</html>

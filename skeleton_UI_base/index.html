@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>상품 목록 (Skeleton UI)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <div>
+          <h1>상품 목록</h1>
+          <div class="muted" id="sub">DummyJSON 제품 API 로딩 중…</div>
+        </div>
+        <div class="toolbar">
+          <button class="btn" id="reloadBtn" title="다시 불러오기">↻ 새로고침</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" aria-live="polite">
+      <section id="error" class="error" role="alert"></section>
+
+      <div id="grid" class="grid" aria-busy="true" aria-describedby="loading-desc">
+        <span id="loading-desc" class="sr-only"
+          >상품 정보를 불러오는 중입니다. 잠시만 기다려주세요.</span
+        >
+        <!-- 스켈레톤 카드가 JS로 주입됨 -->
+      </div>
+
+      <div class="loadmore-wrap">
+        <button class="btn" id="more-btn">더 보기</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

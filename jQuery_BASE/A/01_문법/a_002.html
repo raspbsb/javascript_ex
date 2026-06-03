@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 라이브러리 로드하기</title>
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.min.js"
+      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //   addEventListener("DOMContentLoaded", () => {
+      //     document.querySelector("h1").style.color = "blue";
+      //   });
+
+      //   $(document).ready(function () {
+      //     $("h1").css("color", "blue");
+      //   });
+
+      //   $(function () {
+      //     $("h1").css("color", "blue");
+      //   });
+
+      $(() => {
+        $("h1").css("color", "blue");
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>jQuery 라이브러리 로드하기</h1>
+
+    <script src="a_003.js"></script>
+  </body>
+</html>

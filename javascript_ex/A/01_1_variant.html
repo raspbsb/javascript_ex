@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>변수 - 자바스크립트 기초</title>
+    <meta name="description" content="" />
+    <meta name="author" content="user1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <h1>변수</h1>
+
+    <script>
+      var str1 = "홍길동";
+      str1 = "변사또";
+      document.write(str1);
+      var _new = "이도령";
+      var _new = "성춘향";
+      document.write(_new);
+      var a = 30;
+      var b = 60;
+      var sum = a + b;
+      document.write(sum);
+    </script>
+    <pre>
+        상수 : 변하지 않는 값을 할당
+        const 상수명 = 값
+        - 재할당 불가
+        - 동일한 상수명 생성 불가
+    </pre>
+    <script>
+      const num1 = 50;
+      // const num1 동일한 상수명 생성 불가
+      // num1 = 60; 재할당 불가
+      document.write(num1);
+
+      document.write(sum);
+    </script>
+    <h2>boolean - 참, 거짓</h2>
+    <script>
+      var bool = true;
+      var n = null; // n 변수명에는 null값 (빈 값)을 할당
+      var u; // u 변수명에는 값을 지정하지 않음
+      console.log(bool);
+      console.log(n);
+      console.log(u);
+    </script>
+  </body>
+</html>

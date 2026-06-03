@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>number animation</title>
+  </head>
+  <body>
+    <h1>number animation</h1>
+    <div id="number" data-num="30">0</div>
+    <hr />
+    <div class="numbers">
+      <div data-num="10">0</div>
+      <div data-num="30">0</div>
+      <div data-num="20">0</div>
+    </div>
+    <script>
+      const targets = document.querySelectorAll(".numbers div");
+
+      startNumberAnimation(document.querySelector("#number"));
+
+      function startNumberAnimation(targetEl) {
+        const targetNumber = Number(targetEl.dataset.num);
+
+        let num = 0;
+        let timer = setInterval(
+          () => {
+            targetEl.textContent = ++num;
+            if (num >= targetNumber) {
+              clearInterval(timer);
+            }
+          },
+          (800 + targetNumber * 30) / targetNumber,
+        );
+      }
+
+      targets.forEach(target => {
+        startNumberAnimation(target);
+      });
+    </script>
+  </body>
+</html>

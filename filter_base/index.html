@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter and Sort</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Filter and Sort</h1>
+    <div class="controls">
+      <div class="buttons">
+        <div class="filters">
+          <button data-filter="*">All</button>
+          <button data-filter=".web">web</button>
+          <button data-filter=".mobile">mobile</button>
+          <button data-filter=".app">app</button>
+          <button data-filter=".print">print</button>
+        </div>
+        <div class="sorts">
+          <button data-sort="asc">Ascending</button>
+          <button data-sort="desc">Descending</button>
+          <button data-sort="random">Random</button>
+        </div>
+      </div>
+      <div class="selects">
+        <select name="" id="filter">
+          <option value="*">All</option>
+          <option value=".web">web</option>
+          <option value=".mobile">mobile</option>
+          <option value=".app">app</option>
+          <option value=".print">print</option>
+        </select>
+        <select name="" id="sort">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+          <option value="random">Random</option>
+        </select>
+      </div>
+    </div>
+    <ul class="product_list">
+      <li class="item web" data-order="1">Web</li>
+      <li class="item mobile" data-order="2">mobile</li>
+      <li class="item app" data-order="3">app</li>
+      <li class="item web" data-order="4">Web</li>
+      <li class="item mobile" data-order="5">mobile</li>
+      <li class="item web" data-order="6">Web</li>
+      <li class="item print" data-order="7">print</li>
+      <li class="item mobile" data-order="8">mobile</li>
+      <li class="item web" data-order="9">web</li>
+      <li class="item print" data-order="10">print</li>
+      <li class="item app" data-order="11">app</li>
+      <li class="item web" data-order="12">web</li>
+    </ul>
+    <script src="js/script.js"></script>
+  </body>
+</html>

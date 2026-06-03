@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript module ES6</title>
+  </head>
+  <body>
+    <h1>javascript module ES6</h1>
+    <h2 id="title1"></h2>
+    <h2 id="title2"></h2>
+    <!-- <script type="module" src="index.js"></script> -->
+    <script type="module">
+      // import { func1 } from "./func.js";
+      // import { func2 } from "./func.js";
+      // func1();
+      // func2();
+
+      // import obj from "./func.js";
+      // obj.func1();
+      // obj.func2();
+
+      import obj from "./func.js";
+      obj.func1("#title1", "Hello");
+      obj.func1("#title2", "World");
+    </script>
+  </body>
+</html>

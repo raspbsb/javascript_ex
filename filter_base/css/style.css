@@ -1,0 +1,34 @@
+body {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+.product_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 5%;
+  padding: 0;
+}
+.product_list .item {
+  border: 5px solid #ebebeb;
+  list-style: none;
+  padding: 20px 10px;
+  width: 21%;
+  position: relative;
+}
+.product_list .item:after {
+  content: attr(data-order);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #ccc;
+  color: #000;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+}

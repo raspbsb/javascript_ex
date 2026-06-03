@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>String</title>
+  </head>
+
+  <body>
+    <h1>String</h1>
+
+    <h2>IndexOf, Search</h2>
+    <pre>
+
+      배열에서 인덱스 번호 반환
+
+      문법 : 대상 .indexOf(찾을문자)
+      
+      A.indexOf(B)
+      A에서 B 문자의 인덱스 번호      
+
+    </pre>
+    <script>
+      var str1 = "hello world";
+      var idx = str1.indexOf("world"); // 시작위치 0부터 찾는 문자열의 위치를 inline 방향으로 출력, 찾는 문자열이 없으면 값이 -1로 나옴 (=있는지 없는지 구분가능)
+      var idx = str1.search("world"); // nav spy : 페이지별 HTML 이름 찾아서 내비게이션에 스타일
+      document.write(idx);
+
+      if (idx > -1) {
+      }
+    </script>
+
+    <h2>includes</h2>
+    <pre>
+      includes = 포함하다
+
+      문법 : A.includes(B)
+
+      A에서 B가 포함되어 있는지 여부 검사 -> true / false
+      if(A.includes(B)){
+
+      }
+    </pre>
+    <script>
+      console.log(str1.includes("world"));
+    </script>
+
+    <h2>concat</h2>
+    <pre>
+      문법 : a.concat(b)
+
+      a 배열과 b 배열을 병합해서 새 배열 생성
+      a 문자열과 b 문자열을 병합해서 새 문자열 생성
+    </pre>
+    <script>
+      var str2 = "javascript ";
+      var str3 = "basic";
+      var str4 = str2.concat(str3);
+      document.write(str4);
+    </script>
+
+    <h2>replace</h2>
+    <pre>
+      replace = 교체하다
+      문자열에 특정 문자열을 변경한다.
+
+      문법 : a.replace(b,c)
+      a에서 b를 c로 변경
+    </pre>
+    <script>
+      var str5 = str4.replace("basic", "advanced");
+      document.write(str4 + "<br>");
+      document.write(str5 + "<br>");
+    </script>
+
+    <h2>slice</h2>
+    <pre>
+      문자열의 특정 구간 복사
+
+      문법 : 대상.slice(start, end);
+    </pre>
+    <script>
+      var str6 = str5.slice(0, 10);
+      document.write(str6);
+    </script>
+
+    <h2>split</h2>
+    <pre>
+      split = 흩어지다, 쪼개다
+      join = 배열 -> 문자열로 합쳐준다.
+      split = 문자열 -> 배열로 쪼개준다.
+
+      문법 : 대상.split(쪼갤 기준 문자, 생성할 문자 개수);
+    </pre>
+    <script>
+      var str7 = "a/b/c/d/e";
+      var arr1 = str7.split("/", 3);
+      console.log(arr1);
+    </script>
+
+    <h2>length</h2>
+    <script>
+      console.log(str7.length);
+    </script>
+
+    <h2>chartAt</h2>
+    <pre></pre>
+    <script></script>
+  </body>
+</html>

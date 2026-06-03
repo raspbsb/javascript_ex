@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6</title>
+  </head>
+
+  <body>
+    <h1>ECMAScript 6</h1>
+    <h2>Template Literal</h2>
+    <pre>
+        백틱 ` 활용
+    </pre>
+    <script>
+      var str1 = "hello";
+      var str2 = "world";
+      var str3 = str1 + " " + str2;
+      var str4 = `${str1} ${str2}`;
+      console.log(str4);
+
+      var days = 26;
+      var total = 91;
+      /* 이 과정은 총 91일 중에서 오늘은 26일차이고 진행률은 ??%이며 ??일 남았다 */
+      document.write(
+        "이 과정은 총 " +
+          total +
+          "일 중에서 오늘은 " +
+          days +
+          "일차이고 진행률은 " +
+          Math.round((days / total) * 10000) / 100 +
+          "%이며 " +
+          (total - days) +
+          "일 남았다<br>",
+      );
+      document.write(
+        `이 과정은 총${total}일 중에서 오늘은 ${days}일차이고 진행률은 ${Math.round((days / total) * 10000) / 100} %이며 ${total - days}일 남았다<br>`,
+      );
+    </script>
+    <h2>var vs. let</h2>
+    <script>
+      var i = 10; // 초기화, 초기값 설정
+      {
+        i = 20; // 재할당
+      }
+      console.log(`i=${i}`); // 의도 10, 결과 20
+      let x = 10; // 초기화, 초기값 설정
+      {
+        let x = 20; // 재할당
+      }
+      console.log(`x=${x}`); // 의도 10
+    </script>
+
+    <h2>const</h2>
+    <script>
+      const y = 10; // 재할당 불가
+    </script>
+    <hr />
+
+    <h2>const 변수 값의 수정</h2>
+    <script>
+      const st = {
+        kor: 100,
+        eng: 90,
+      };
+
+      /* 상수에 할당한 객체 재할당 불가
+      const st = {
+        kor: 90,
+        eng: 100
+      };
+      */
+
+      st.kor = 99; //지금처럼 값의 일부는 변경 가능 (값을 통째로 바꾸는것만 X)
+    </script>
+
+    <h2>const 변수 재할당</h2>
+    <script>
+      // 상수 객체 property 추가 가능
+      st.math = 80;
+    </script>
+    <h2>Arrow function 화살표 함수</h2>
+    <pre>
+      이런 기본형 함수는 화살표 함수로 못바꿈
+      function 함수명(매개변수) {할일}
+
+      익명함수만 화살표 함수로 변경할 수 있음
+      var add = function(){}  
+
+      ->
+
+      ()=>{}
+    </pre>
+    <script></script>
+    <hr />
+    <script>
+      //1 기존 문법
+      let add1 = function (a, b) {
+        return a + b;
+      };
+      // -->
+      let add2 = (a, b) => {
+        return a + b;
+      };
+
+      //2 매개변수가 하나일 때는 괄호 생략 가능
+      let multiply1 = (x) => {
+        return x * 2;
+      };
+      // -->
+      let multiply2 = (x) => {
+        return x * 2;
+      };
+
+      //3 함수내에서 바로 리턴만 있을 때 중괄호 생략 가능
+      let multiply3 = (x) => x * 2;
+    </script>
+    <h2>Spread Operator 전개 연산자</h2>
+    <pre>
+      배열의 내용물을 복제해서 다른 배열 내부에 풀어헤친다
+    </pre>
+    <script>
+      let arr1 = [1, 2, 3];
+      let arr2 = [4, 5, 6];
+      let arr3 = arr1.concat(arr2);
+      let arr4 = [arr1[0], arr1[1], arr1[2], arr2[0], arr2[1], arr2[2]];
+      let arr5 = [...arr1, ...arr2];
+    </script>
+  </body>
+</html>

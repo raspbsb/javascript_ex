@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Array</title>
+  </head>
+
+  <body>
+    <h1>Array</h1>
+    <pre>
+      var drink1 = '소주'
+      var drink2 = '맥주'
+      var drink3 = '위스키'
+      
+      // 값이 많아지면 쓰기 어려움
+
+      배열 : 비슷한 종류의 값을 하나의 변수에 할당
+
+      새 배열 생성
+      1. 빈 배열 + 값 추가
+        var 배열명 = new Array(); // 빈 배열 생성
+        var 배열명 = [];          // 빈 배열 생성
+
+        배열에 값 추가
+          배열명[인덱스 번호] = 값;
+
+      2. 값을 생성하면서 배열 생성
+        var 배열명 = [값, 값, 값, ...];
+
+      3. 배열의 값 출력
+        배열명[인덱스번호]
+
+    </pre>
+    <script>
+      var langs = [];
+      langs[0] = "html";
+      langs[1] = "css";
+      langs[2] = "javascript";
+      console.log(langs);
+      console.log(langs[0]);
+
+      var fronts = ["react", "vue.js", "node.js"];
+      console.log(fronts);
+      console.log(fronts[2]);
+    </script>
+    <hr />
+    <script></script>
+    <hr />
+    <script></script>
+
+    <h2>length</h2>
+    <pre>
+      배열의 length 길이, 배열 내 값의 (length)개수
+    </pre>
+    <script>
+      console.log(langs.length);
+    </script>
+
+    <h2>join</h2>
+    <pre>
+      배열의 값을 하나의 문자열로 합침 (join)
+      배열 -> 문자열 변경
+      대상.join(); //기본값 콤마(,)로 연결해서 병합
+      대상.join('-') // 하이픈(-)으로 연결해서 병합
+    </pre>
+    <script>
+      var frontsStr = fronts.join("-");
+      document.write(frontsStr);
+    </script>
+
+    <h2>reverse</h2>
+    <pre>
+      배열의 값의 순서를 역순으로 변경 - 원본을 수정
+      대상.reverse();
+    </pre>
+    <script>
+      fronts.reverse();
+      console.log(fronts);
+    </script>
+
+    <h2>sort</h2>
+    <pre>
+      배열의 값을 정렬 (오름차순, 내림차순)
+      대상.sort();
+    </pre>
+    <script>
+      var fruits = ["apple", "orange", "banana"];
+      fruits.sort(); // 알파벳순
+      console.log(fruits);
+
+      var nums = [0, 50, 20, 40];
+      nums.sort(); // 오름차순으로 저렬
+      console.log(nums);
+
+      var nums2 = [0, 50, 20, 40];
+      nums2.sort(function (a, b) {
+        // return a - b; // 오름차순으로 정렬
+        return b - a; // 내림차순으로 정렬
+      });
+      console.log(nums2);
+    </script>
+
+    <h2>push</h2>
+    <pre>
+      push = 밀다, 밀어넣다
+      기존 배열의 마지막에 값을 추가
+      대상.push(새값);
+    </pre>
+    <script>
+      fronts.push("svelte");
+      console.log(fronts);
+    </script>
+
+    <h2>pop</h2>
+    <pre>
+      ㅇㅇ
+      ㅇㅇ
+    </pre>
+    <script></script>
+
+    <h2>unshift</h2>
+    <pre>
+
+      대상.unshift();
+    </pre>
+    <script>
+      fronts.unshift("svelte");
+      console.log(fronts);
+    </script>
+
+    <h2>shift</h2>
+    <pre>
+      배열의 첫번째 값을 제거
+      대상.shift();
+    </pre>
+    <script>
+      fronts.shift("svelte");
+      console.log(fronts);
+    </script>
+
+    <h2>slice</h2>
+    <pre>
+      slice 자르다, 구간설정
+      대상.slice(start, end);
+      start 부터 end의 앞자리까지 복사
+    </pre>
+    <script>
+      var myNums = [0, 1, 2, 3, 4, 5];
+      var slideNums = myNums.slice(1, 5);
+      document.write(slideNums+"<br>");
+      document.write(myNums+"<br>");
+    </script>
+
+    <h2>splice</h2>
+    <pre>
+      대상 특정 구간(값) 오려내기
+      대상.splice(start, length);
+      start부터 length 개수만큼 오려내기
+      대상.splice(-1) 뒤부터 1개 오려내기
+      대상.splice(-2) 뒤부터 2개 오려내기
+    </pre>
+    <script>
+      var myNums2 = [0, 1, 2, 3, 4, 5];
+      var slideNums2 = myNums.splice;
+    </script>
+
+    <h2>concat</h2>
+    <pre>
+      문자열, 배열의 값을 병합 - 새 배열 생성
+      A.concat(B)
+      A배열과 B배열을 병합
+    </pre>
+    <script>
+      var fullstacks = langs.concat(fronts);
+      console.log(fullstacks);
+    </script>
+
+    <h2>filter</h2>
+    <pre>
+      filter 거르다
+      특정 조건에 맞는 요소들만 추려서 (걸러서) 새 배열 생성
+      대상.filter(함수);
+      함수 할일 function(){}
+    </pre>
+    <script>
+      var num = [10, 7, 25, 22, 30];
+      var filtered = num.filter(function (item) {
+        return item % 2 === 0;
+      });
+      console.log(filtered);
+    </script>
+  </body>
+</html>
