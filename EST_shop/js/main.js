@@ -1,3 +1,6 @@
+// renderProductCards 함수 불러오기
+import { renderProductCards } from "./modules/renderProductCards.js";
+
 //상품 조회
 async function fetchProducts() {
   try {
@@ -17,37 +20,14 @@ async function fetchProducts() {
     const frag = document.createDocumentFragment();
     total = data.total;
 
-    // products마다 할일
-    // 12개 요소 생성해서 빈요소 뒤에 넣기
-    // product-grid에 fragment의 내용을 html태그로 생성
+    // 빈 요소 생성해서 html 텍스트 생성 12번 반복 후 빈요소 뒤에 넣고 html에 렌더링
+    renderProductCards(products, frag);
 
-    for (let i = 0; i < products.length; i++) {
-      const card = document.createElement("article"); // 빈 요소에 태그 추가
-
-      card.className = "product-card";
-
-      card.innerHTML = `
-        <img
-          src="${products[i].thumbnail}"
-          alt="${products[i].title}"
-        />
-        <div class="product-info">
-          <h3>${products[i].title}</h3>
-          <p>${products[i].description}</p>
-          <div class="product-bottom">
-            <strong>${products[i].price}$</strong>
-            <button
-              type="button"
-              class="cart-add"
-              aria-label="${products[i].title} 장바구니 담기"
-            ></button>
-          </div>
-        </div>
-      `;
-      frag.appendChild(card);
-    }
+    // 그리드에 내용이 채워진 요소를 넣기
     grid.appendChild(frag);
     desctotal.textContent = `총 ${total}개 상품`;
+
+    // const productHTML = products.map(item => <article></article>);
   } catch (error) {
     console.log("상품 조회 실패", error);
   } finally {
