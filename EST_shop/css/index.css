@@ -161,14 +161,36 @@
   margin-top: 48px;
 }
 
+.pagination .pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.pagination a[aria-label] {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pagination a.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 .pagination a,
 .pagination span {
-  display: grid;
-  min-width: 40px;
+  display: inline-grid;
+  width: 40px;
   height: 40px;
   place-items: center;
   border-radius: 8px;
   color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
 }
 
 .pagination a.active {
