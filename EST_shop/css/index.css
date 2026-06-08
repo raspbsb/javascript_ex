@@ -84,10 +84,6 @@
   border-radius: var(--radius-card);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
-
-  border: 1px solid #eaeaea;
-  display: flex;
-  flex-direction: column;
 }
 
 .product-card img {
@@ -99,10 +95,6 @@
 
 .product-info {
   padding: 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .product-info h3 {
@@ -110,18 +102,14 @@
   font-size: 16px;
   font-weight: 700;
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: hidden; /* 영역을 벗어난 텍스트 숨김 */
+  white-space: nowrap; /* 텍스트가 줄바꿈되지 않게 설정 */
+  text-overflow: ellipsis; /* 말줄임표(...) 표시 */
 }
 
 .product-info p {
   margin: 0 0 14px;
   color: var(--color-muted);
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .product-bottom {
@@ -161,41 +149,26 @@
   margin-top: 48px;
 }
 
-.pagination .pager {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 0;
-}
-
-.pagination a[aria-label] {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.pagination a.disabled {
-  pointer-events: none;
-  opacity: 0.3;
-}
-
 .pagination a,
 .pagination span {
   display: inline-grid;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   place-items: center;
   border-radius: 8px;
   color: #6b7280;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-  text-decoration: none;
 }
 
 .pagination a.active {
   background: var(--color-primary);
   color: var(--color-primary-text);
+}
+.pagination a[aria-label] {
+  font-size: 2em;
+}
+.pagination a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 @media (max-width: 1024px) {

@@ -118,6 +118,7 @@ function productCard(p) {
         </div>
       </div>
   `;
+
   return card;
 }
 
